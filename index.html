@@ -15,16 +15,23 @@
   }
   h1 { font-size: 1.5rem; margin-bottom: 1.5rem; }
   h2 { font-size: 1.15rem; margin: 0 0 0.25rem; }
+  h3 { font-size: 1rem; margin: 0; }
+  .scene { font-size: 1.3rem; margin: 3rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid #ddd; }
+  .specs { margin-bottom: 1rem; }
   .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
   }
+  .graphs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  figure { margin: 0; }
+  figure img { max-width: 100%; height: auto; display: block; }
+  figcaption { font-size: 0.85rem; color: #555; margin-top: 0.4rem; }
   table { border-collapse: collapse; width: 100%; margin-top: 0.75rem; font-size: 0.85rem; }
   th, td { text-align: left; padding: 5px 6px; border-bottom: 1px solid #ddd; }
   th { border-bottom: 2px solid #222; font-weight: bold; }
   @media (max-width: 1000px) {
-    .grid { grid-template-columns: 1fr; }
+    .grid, .graphs { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -32,16 +39,37 @@
 
 <h1>3D Gaussian Splatting vs. NeRF vs. Triangle Splatting</h1>
 
-<div class="grid">
-
+<div class="grid specs">
   <section>
     <h2>NVIDIA GeForce RTX 3060 Laptop GPU (95W)</h2>
     <p>
       Processor: AMD Ryzen 7 5800H with Radeon Graphics (8 cores / 16 threads), ~3.2 GHz<br>
       Dedicated display memory: 5996 MB
     </p>
+  </section>
+  <section>
+    <h2>GPU 2</h2>
+    <p>
+      Processor: <br>
+      Dedicated display memory:
+    </p>
+  </section>
+  <section>
+    <h2>GPU 3</h2>
+    <p>
+      Processor: <br>
+      Dedicated display memory:
+    </p>
+  </section>
+</div>
+Bonsai_4
+<h2 class="scene">Scene 1: name</h2>
+<div class="grid">
+
+  <section>
+    <h3>RTX 3060 Laptop</h3>
     <table>
-      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>TriangleSplatting</th></tr>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
       <tr><td>PSNR</td><td>32.7684</td><td></td><td></td></tr>
       <tr><td>SSIM</td><td>0.9560</td><td></td><td></td></tr>
       <tr><td>LPIPS</td><td>0.0956</td><td></td><td></td></tr>
@@ -56,13 +84,9 @@
   </section>
 
   <section>
-    <h2>GPU 2</h2>
-    <p>
-      Processor: <br>
-      Dedicated display memory:
-    </p>
+    <h3>GPU 2</h3>
     <table>
-      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Trianglesplatting</th></tr>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
       <tr><td>PSNR</td><td></td><td></td><td></td></tr>
       <tr><td>SSIM</td><td></td><td></td><td></td></tr>
       <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
@@ -77,13 +101,9 @@
   </section>
 
   <section>
-    <h2>GPU 3</h2>
-    <p>
-      Processor: <br>
-      Dedicated display memory:
-    </p>
+    <h3>GPU 3</h3>
     <table>
-      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>TriangleSplatting</th></tr>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
       <tr><td>PSNR</td><td></td><td></td><td></td></tr>
       <tr><td>SSIM</td><td></td><td></td><td></td></tr>
       <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
@@ -96,6 +116,145 @@
       <tr><td>Status</td><td></td><td></td><td></td></tr>
     </table>
   </section>
+
+</div>
+
+<h2 class="scene">Scene 2: name</h2>
+<div class="grid">
+
+  <section>
+    <h3>RTX 3060 Laptop</h3>
+    <table>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
+      <tr><td>PSNR</td><td></td><td></td><td></td></tr>
+      <tr><td>SSIM</td><td></td><td></td><td></td></tr>
+      <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
+      <tr><td>Training time</td><td></td><td></td><td></td></tr>
+      <tr><td>Peak VRAM</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (peak)</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (sustained)</td><td></td><td></td><td></td></tr>
+      <tr><td>Energy per run</td><td></td><td></td><td></td></tr>
+      <tr><td>Model size</td><td></td><td></td><td></td></tr>
+      <tr><td>Status</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>GPU 2</h3>
+    <table>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
+      <tr><td>PSNR</td><td></td><td></td><td></td></tr>
+      <tr><td>SSIM</td><td></td><td></td><td></td></tr>
+      <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
+      <tr><td>Training time</td><td></td><td></td><td></td></tr>
+      <tr><td>Peak VRAM</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (peak)</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (sustained)</td><td></td><td></td><td></td></tr>
+      <tr><td>Energy per run</td><td></td><td></td><td></td></tr>
+      <tr><td>Model size</td><td></td><td></td><td></td></tr>
+      <tr><td>Status</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>GPU 3</h3>
+    <table>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
+      <tr><td>PSNR</td><td></td><td></td><td></td></tr>
+      <tr><td>SSIM</td><td></td><td></td><td></td></tr>
+      <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
+      <tr><td>Training time</td><td></td><td></td><td></td></tr>
+      <tr><td>Peak VRAM</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (peak)</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (sustained)</td><td></td><td></td><td></td></tr>
+      <tr><td>Energy per run</td><td></td><td></td><td></td></tr>
+      <tr><td>Model size</td><td></td><td></td><td></td></tr>
+      <tr><td>Status</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+</div>
+
+<!-- ============ SCENE 3 ============ -->
+<h2 class="scene">Scene 3: name</h2>
+<div class="grid">
+
+  <section>
+    <h3>RTX 3060 Laptop</h3>
+    <table>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
+      <tr><td>PSNR</td><td></td><td></td><td></td></tr>
+      <tr><td>SSIM</td><td></td><td></td><td></td></tr>
+      <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
+      <tr><td>Training time</td><td></td><td></td><td></td></tr>
+      <tr><td>Peak VRAM</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (peak)</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (sustained)</td><td></td><td></td><td></td></tr>
+      <tr><td>Energy per run</td><td></td><td></td><td></td></tr>
+      <tr><td>Model size</td><td></td><td></td><td></td></tr>
+      <tr><td>Status</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>GPU 2</h3>
+    <table>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
+      <tr><td>PSNR</td><td></td><td></td><td></td></tr>
+      <tr><td>SSIM</td><td></td><td></td><td></td></tr>
+      <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
+      <tr><td>Training time</td><td></td><td></td><td></td></tr>
+      <tr><td>Peak VRAM</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (peak)</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (sustained)</td><td></td><td></td><td></td></tr>
+      <tr><td>Energy per run</td><td></td><td></td><td></td></tr>
+      <tr><td>Model size</td><td></td><td></td><td></td></tr>
+      <tr><td>Status</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>GPU 3</h3>
+    <table>
+      <tr><th>Metric</th><th>3DGS</th><th>NeRF</th><th>Triangle Splatting</th></tr>
+      <tr><td>PSNR</td><td></td><td></td><td></td></tr>
+      <tr><td>SSIM</td><td></td><td></td><td></td></tr>
+      <tr><td>LPIPS</td><td></td><td></td><td></td></tr>
+      <tr><td>Training time</td><td></td><td></td><td></td></tr>
+      <tr><td>Peak VRAM</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (peak)</td><td></td><td></td><td></td></tr>
+      <tr><td>Render FPS (sustained)</td><td></td><td></td><td></td></tr>
+      <tr><td>Energy per run</td><td></td><td></td><td></td></tr>
+      <tr><td>Model size</td><td></td><td></td><td></td></tr>
+      <tr><td>Status</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+</div>
+
+<!-- ============ GRAPHS ============ -->
+<h2 class="scene">Graphs</h2>
+<div class="grid graphs">
+
+  <figure>
+    <img src="graphs/sustained-fps.png" alt="Sustained render FPS over 10 minutes">
+    <figcaption>Sustained render FPS over time.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="graphs/psnr-vs-fps.png" alt="PSNR versus render FPS">
+    <figcaption>Quality vs. speed.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="graphs/peak-vram.png" alt="Peak VRAM per method">
+    <figcaption>Peak VRAM.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="graphs/training-time.png" alt="Training time per method">
+    <figcaption>Training time.</figcaption>
+  </figure>
 
 </div>
 
